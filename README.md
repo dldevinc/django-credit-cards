@@ -31,5 +31,14 @@ class PaymentForm(forms.Form):
     cc_code = SecurityCodeField(label='CVV/CVC')
 ```
 
+### Credit Card Type Detection
+```python
+from creditcards import types
+
+assert types.get_type('4444333322221111') == types.CC_TYPE_VISA
+assert types.get_type('343434343434343') == types.CC_TYPE_AMEX
+assert types.get_type('0000000000000000') == types.CC_TYPE_GENERIC
+```
+
 ## License
 Copyright (c) 2018 Mihail Mishakin Released under the MIT license (see LICENSE)
