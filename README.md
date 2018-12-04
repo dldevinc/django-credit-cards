@@ -30,3 +30,6 @@ class PaymentForm(forms.Form):
     cc_expiry = CardExpiryField(label='Expiration Date')
     cc_code = SecurityCodeField(label='CVV/CVC')
 ```
+
+## License
+Copyright (c) 2018 Mihail Mishakin Released under the MIT license (see LICENSE)
