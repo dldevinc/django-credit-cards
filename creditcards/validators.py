@@ -7,7 +7,7 @@ from . import utils
 
 
 @deconstructible
-class LuhnValidator:
+class CCNumberValidator:
     message = _('Enter a valid credit card number.')
     code = 'invalid'
 

@@ -3,7 +3,7 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import MinLengthValidator
 from django.utils.translation import gettext_lazy as _
-from .validators import LuhnValidator, CSCValidator
+from .validators import CCNumberValidator, CSCValidator
 from . import forms
 from . import utils
 
@@ -12,8 +12,8 @@ __all__ = ['CardNumberField', 'CardExpiryField', 'SecurityCodeField']
 
 class CardNumberField(models.CharField):
     default_validators = [
-        LuhnValidator(),
-        MinLengthValidator(8),
+        MinLengthValidator(12),
+        CCNumberValidator(),
     ]
     description = _("Card number")
 
