@@ -18,7 +18,7 @@ URL = 'https://github.com/dldevinc/django-credit-cards'
 EMAIL = 'x896321475@gmail.com'
 AUTHOR = 'Mihail Mishakin'
 REQUIRES_PYTHON = '>=3'
-VERSION = '0.1'
+VERSION = '0.2'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
