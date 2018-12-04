@@ -27,6 +27,6 @@ def luhn(candidate):
         return False
 
 
-def exiry_date(year, month):
+def expiry_date(year, month):
     weekday, day_count = calendar.monthrange(year, month)
     return datetime.date(year, month, day_count)

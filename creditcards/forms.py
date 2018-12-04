@@ -40,7 +40,7 @@ class CardExpiryField(forms.DateField):
     def to_python(self, value):
         value = super().to_python(value)
         if isinstance(value, datetime.date):
-            value = utils.exiry_date(value.year, value.month)
+            value = utils.expiry_date(value.year, value.month)
         return value
 
     def widget_attrs(self, widget):
