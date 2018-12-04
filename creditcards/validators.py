@@ -7,7 +7,7 @@ from . import utils
 
 
 @deconstructible
-class LuhnValidator:
+class CCNumberValidator:
     message = _('Enter a valid credit card number.')
     code = 'invalid'
 
@@ -48,8 +48,8 @@ class ExpiryDateValidator:
             self.code = code
 
     def __call__(self, value):
-        exiry_date = utils.exiry_date(value.year, value.month)
-        if exiry_date < datetime.date.today():
+        expiry_date = utils.expiry_date(value.year, value.month)
+        if expiry_date < datetime.date.today():
             raise ValidationError(self.message, code=self.code)
 
     def __eq__(self, other):

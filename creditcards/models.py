@@ -3,7 +3,7 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import MinLengthValidator
 from django.utils.translation import gettext_lazy as _
-from .validators import LuhnValidator, CSCValidator
+from .validators import CCNumberValidator, CSCValidator
 from . import forms
 from . import utils
 
@@ -12,8 +12,8 @@ __all__ = ['CardNumberField', 'CardExpiryField', 'SecurityCodeField']
 
 class CardNumberField(models.CharField):
     default_validators = [
-        LuhnValidator(),
-        MinLengthValidator(8),
+        MinLengthValidator(12),
+        CCNumberValidator(),
     ]
     description = _("Card number")
 
@@ -43,12 +43,12 @@ class CardExpiryField(models.DateField):
         if value is None:
             return value
         if isinstance(value, (datetime.datetime, datetime.date)):
-            return utils.exiry_date(value.year, value.month)
+            return utils.expiry_date(value.year, value.month)
 
         for fmt in self.input_formats:
             try:
                 date = datetime.datetime.strptime(value, fmt).date()
-                return utils.exiry_date(date.year, date.month)
+                return utils.expiry_date(date.year, date.month)
             except ValueError:
                 pass
 
