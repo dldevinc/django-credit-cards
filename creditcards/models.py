@@ -32,7 +32,7 @@ class CardNumberField(models.CharField):
 
 
 class CardExpiryField(models.DateField):
-    input_formats = ['%m/%y', '%m/%Y']
+    input_formats = ['%m/%y', '%m/%Y', '%Y-%m-%d']
     default_error_messages = {
         'invalid': _("'%(value)s' value has an invalid date format. "
                      "Expiry date must be in the format MM/YY or MM/YYYY.")
