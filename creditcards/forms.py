@@ -22,9 +22,8 @@ class CardNumberField(forms.CharField):
     def widget_attrs(self, widget):
         attrs = super().widget_attrs(widget)
         attrs.update({
-            'pattern': '[-\d\s]*',
-            'x-autocompletetype': 'cc-number',
-            'autocompletetype': 'cc-number',
+            'pattern': r'[-\d\s]*',
+            'autocomplete': 'cc-number',
             'autocorrect': 'off',
             'spellcheck': 'off',
             'autocapitalize': 'off',
@@ -51,10 +50,9 @@ class CardExpiryField(forms.DateField):
     def widget_attrs(self, widget):
         attrs = super().widget_attrs(widget)
         attrs.update({
-            'pattern': '\d+/\d+',
+            'pattern': r'\d+/\d+',
             'placeholder': 'MM/YY',
-            'x-autocompletetype': 'cc-exp',
-            'autocompletetype': 'cc-exp',
+            'autocomplete': 'cc-exp',
             'autocorrect': 'off',
             'spellcheck': 'off',
             'autocapitalize': 'off',
@@ -69,9 +67,8 @@ class SecurityCodeField(forms.CharField):
     def widget_attrs(self, widget):
         attrs = super().widget_attrs(widget)
         attrs.update({
-            'pattern': '\d*',
-            'x-autocompletetype': 'cc-csc',
-            'autocompletetype': 'cc-csc',
+            'pattern': r'\d*',
+            'autocomplete': 'cc-csc',
             'autocorrect': 'off',
             'spellcheck': 'off',
             'autocapitalize': 'off',
