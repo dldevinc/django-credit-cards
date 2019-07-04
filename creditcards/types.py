@@ -13,7 +13,7 @@ CC_TYPE_MIR = 8
 CC_TYPE_UNIONPAY = 9
 
 # Based on Chromium source code:
-# https://github.com/chromium/chromium/blob/master/components/autofill/core/browser/credit_card.cc#L196
+# https://github.com/chromium/chromium/blob/master/components/autofill/core/browser/data_model/credit_card.cc
 #
 # Note that UnionPay validated by Luhn checksum:
 # https://github.com/chromium/chromium/commit/c2e6e3149e3abd4de5b9969c2ece3caa019c3540
