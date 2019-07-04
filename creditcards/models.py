@@ -12,7 +12,7 @@ __all__ = ['CardNumberField', 'CardExpiryField', 'SecurityCodeField']
 
 class CardNumberField(models.CharField):
     default_validators = [
-        MinLengthValidator(12),
+        MinLengthValidator(13),
         CCNumberValidator(),
     ]
     description = _("Card number")

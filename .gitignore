@@ -4,9 +4,11 @@ dist/
 eggs/
 .eggs/
 .idea/
+.tox
 *.egg-info/
 *.egg
 *.pyc
 
+.env/
 env/
 venv/

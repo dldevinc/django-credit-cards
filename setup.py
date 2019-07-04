@@ -9,7 +9,7 @@ import os
 import sys
 from shutil import rmtree
 
-from setuptools import setup, Command
+from setuptools import find_packages, setup, Command
 
 # Package meta-data.
 NAME = 'django-credit-cards'
@@ -18,15 +18,22 @@ URL = 'https://github.com/dldevinc/django-credit-cards'
 EMAIL = 'x896321475@gmail.com'
 AUTHOR = 'Mihail Mishakin'
 REQUIRES_PYTHON = '>=3'
-VERSION = '0.4'
+VERSION = '0.4.1'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'Django >= 1.8',
+    'django>=1.8',
 ]
 
 # What packages are optional?
-EXTRAS = {}
+EXTRAS = {
+
+}
+
+KEYWORDS = [
+    'django',
+    'creditcards',
+]
 
 # The rest you shouldn't have to touch too much :)
 # ------------------------------------------------
@@ -100,7 +107,9 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
+    license='BSD',
     packages=['creditcards'],
+    package_data={},
     # If your package is a single module, use this instead of 'packages':
     # py_modules=['mypackage'],
 
@@ -109,8 +118,11 @@ setup(
     # },
     install_requires=REQUIRED,
     extras_require=EXTRAS,
+    tests_require=[
+        'tox',
+    ],
+    keywords=KEYWORDS,
     include_package_data=True,
-    license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
@@ -125,5 +137,4 @@ setup(
     cmdclass={
         'upload': UploadCommand,
     },
-    keywords='django credit card',
 )
