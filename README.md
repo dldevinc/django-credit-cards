@@ -41,4 +41,4 @@ assert types.get_type('0000000000000000') == types.CC_TYPE_GENERIC
 ```
 
 ## License
-Copyright (c) 2018 Mihail Mishakin Released under the MIT license (see LICENSE)
+Copyright (c) 2018 Mihail Mishakin Released under the BSD license (see LICENSE)

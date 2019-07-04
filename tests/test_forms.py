@@ -1,6 +1,6 @@
 import datetime
 from django.test import TestCase
-from .forms import CardNumber, CardExpiry, CardCode
+from .app.forms import CardNumber, CardExpiry, CardCode
 
 
 class CardNumberTest(TestCase):

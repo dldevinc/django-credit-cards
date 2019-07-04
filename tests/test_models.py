@@ -1,7 +1,7 @@
 import datetime
 from django.core.exceptions import ValidationError
 from django.test import TestCase
-from .models import CardNumber, CardExpiry, CardCode
+from .app.models import CardNumber, CardExpiry, CardCode
 
 
 class CardNumberTest(TestCase):
@@ -27,7 +27,7 @@ class CardNumberTest(TestCase):
 
 class CardExpiryTest(TestCase):
     def test_input_invalid_string(self):
-        obj = CardExpiry(expiry='2018-11-10')
+        obj = CardExpiry(expiry='something')
         self.assertRaises(ValidationError, obj.clean_fields)
 
     def test_input_short_string(self):
